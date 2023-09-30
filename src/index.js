@@ -3,6 +3,9 @@ import ReactDOM from 'react-dom/client';
 import './index.css';
 import App from './App';
 import reportWebVitals from './reportWebVitals';
+import './assets/Instrument_Sans/static/InstrumentSans-Bold.ttf'
+import './assets/Instrument_Sans/static/InstrumentSans-Regular.ttf'
+
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(

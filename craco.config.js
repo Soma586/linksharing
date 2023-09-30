@@ -8,7 +8,7 @@ module.exports = {
     
     additionalData: `
     
-    @import "src/Typography/common.scss";
+    @import "src/scss/typography.scss";
     
     `,
     

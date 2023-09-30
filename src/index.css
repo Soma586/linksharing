@@ -11,3 +11,13 @@ code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
     monospace;
 }
+
+@font-face {
+  font-family: 'InstrumentSans';
+  src: url('./assets/Instrument_Sans/static/InstrumentSans-Regular.ttf');
+}
+
+@font-face {
+  font-family: 'InstrumentSans_Bold';
+  src: url('./assets/Instrument_Sans/static/InstrumentSans-Bold.ttf')
+}
