@@ -1,0 +1,48 @@
+
+
+.linkContainer {
+
+
+    border-radius: 10px;
+}
+
+
+// .custom-select{
+//     position: relative;
+// }
+
+// .custom-select select {
+
+//     display: none;
+// }
+
+.select-container {
+    margin: 20px;
+  }
+  
+  .custom-select {
+    width: 200px;
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    outline: none;
+    font-size: 16px;
+    appearance: none;
+  }
+  
+  .custom-select:hover {
+    border-color: #007bff;
+  }
+  
+  /* Style the select options */
+  .custom-select option {
+    background-color: #fff;
+    color: #333;
+    padding: 10px;
+    font-size: 16px;
+  }
+  
+  .custom-select option:hover {
+    background-color: #007bff;
+    color: #fff;
+  }
