@@ -5,6 +5,7 @@ import App from './App';
 import reportWebVitals from './reportWebVitals';
 import './assets/Instrument_Sans/static/InstrumentSans-Bold.ttf'
 import './assets/Instrument_Sans/static/InstrumentSans-Regular.ttf'
+import './scss/main.scss'
 
 
 const root = ReactDOM.createRoot(document.getElementById('root'));

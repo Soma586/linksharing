@@ -16,11 +16,20 @@ import freecodeIcon from '../../assets/images/icon-freecodecamp.svg'
 import codepenIcon from '../../assets/images/icon-codepen.svg'
 import codewarsIcon from '../../assets/images/icon-codewars.svg'
 import hashnodeIcon from '../../assets/images/icon-hashnode.svg'
+import linkHeaderIcon from '../../assets/images/icon-links-header.svg'
+import {SortableContext, Sor, verticalListSortingStrategy, useSortable, arrayMove} from '@dnd-kit/sortable'
+import {CSS} from '@dnd-kit/utilities'
+
+const Link = ({handledelete, index, id, title}) => {
 
 
-const Link = () => {
+    console.log(`this is an id ${id}`)
+    const {attributes, listeners, setNodeRef, transform, transition} = useSortable({id})
 
-
+    const style = {
+      transform : CSS.Transform.toString(transform),
+      transition 
+    }
     const media = [
         {
             name: 'Github',
@@ -76,66 +85,61 @@ const Link = () => {
         }
     ]
 
-    console.log(media)
+    //console.log(media)
 
-    const optionList = _.map(media, (data) => {
 
-        return (
-            <option>
-                <img src={data.icon}/>
-                <span>{data.name}</span> 
-                
-            </option>
-        )
-       
+    const [value, setValue] = useState("")
+
+
+    const handleValue = (e) => {
+
+        setValue(e.target.value)
+
+    }
+
+    const options = _.map(media, (data) => {
+
+        return {
+            value: data.name,
+            label: (<> <img src={data.icon}/> <span className="ms-2">{data.name}</span> </>)
+        }
     })
 
-    // const optionList = media.map((data) => {
-
-    //     return <option>{data.name} </option>
-    // })
-
-
-    const options = [
-        { value: 'chocolate', label: 'Chocolate' },
-        { value: 'strawberry', label: 'Strawberry' },
-        { value: 'vanilla', label: 'Vanilla' }
-      ]
+  
       
       const MyComponent = () => (
         <Select options={options} />
       )
-    return (
-        <div className='linkContainer bg-lightgrey'>
+        console.log("NARuto")
 
-            <div>
-            <img src={dragIcon}/>   <span>Link #1</span>
+return (
+    <div ref={setNodeRef}   style={style}>
+    <div className='linkContainer bg-lightgrey' >
 
-            </div>
-          
-          <label>Platform</label>
+<div className="mb-2 d-flex justify-content-between">
+    <div>
+    <img {...attributes} {...listeners}  src={dragIcon}/>   <span className="ms-2">Link #{id}</span>
+    </div>
 
+    <div onClick={handledelete}>
+        <span>Remove</span>
+    </div>
 
-<div className="select-container">
-<select  className="custom-select">
-            {optionList}
-        </select>
 </div>
-        
 
-
-        <p>Link</p>
-
-        <img src={gitIcon}/>
-
-        <input
-        type="text"
-        />
-
+        <label> Platform</label>
         <MyComponent/>
-          
+
+        <label>Link</label>
+        <div>
+            <img src={linkHeaderIcon}/>
+        <input onChange={handleValue} type="text"/>
         </div>
-    )
+        
+    </div>
+    </div>
+    
+)
 
 }
 
